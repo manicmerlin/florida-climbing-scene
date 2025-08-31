@@ -63,7 +63,7 @@ const climbingGyms = [
     "website": "https://www.bocaprep.net",
     "phone": "(561) 852-1410",
     "instagram": "",
-    "hours": "",
+    "hours": "School climbing wall (no public hours)",
     "amenities": ["Climbing wall (school)"]
   },
   {
@@ -107,7 +107,7 @@ const climbingGyms = [
     "website": "https://centralrockgym.com",
     "phone": "",
     "instagram": "",
-    "hours": "",
+    "hours": "Not yet open (coming in 2025)",
     "amenities": ["Lead", "Top rope", "Bouldering", "Auto belay", "Fitness", "Yoga", "Training boards"]
   },
   {
@@ -118,7 +118,7 @@ const climbingGyms = [
     "website": "https://centralrockgym.com",
     "phone": "",
     "instagram": "",
-    "hours": "",
+    "hours": "Planned location (no operating hours yet)",
     "amenities": ["Lead", "Top rope", "Bouldering", "Auto belay"]
   },
   {
@@ -217,7 +217,7 @@ const climbingGyms = [
     "website": "https://www.capwholesalers.com",
     "phone": "(877) 984-2277",
     "instagram": "",
-    "hours": "",
+    "hours": "Private climbing wall (Mon-Fri: ~8am-5:30pm)",
     "amenities": ["Climbing wall (private/corporate)"]
   },
   {
@@ -382,7 +382,7 @@ const climbingGyms = [
     "website": "",
     "phone": "",
     "instagram": "",
-    "hours": "",
+    "hours": "Contact FAU Campus Recreation for hours",
     "amenities": ["Climbing wall (university)"]
   },
   {
@@ -426,7 +426,7 @@ const climbingGyms = [
     "website": "",
     "phone": "",
     "instagram": "",
-    "hours": "",
+    "hours": "Call for availability (no published hours)",
     "amenities": ["Climbing wall (outdoor gear shop)"]
   }
 ];
