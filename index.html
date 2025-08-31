@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florida Climbing Scene</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NQ9JL63TB4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-NQ9JL63TB4');
+    </script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>FLORIDA CLIMBING DIRECTORY</h1>
+            <p>Discover the vibrant climbing community across Florida, from local gyms to outdoor crags and training facilities.</p>
+        </header>
+
+        <nav class="filter-nav">
+            <div class="filter-group">
+                <label class="filter-label">Region:</label>
+                <button class="filter-btn region-btn active" data-region="all">All Florida</button>
+                <button class="filter-btn region-btn" data-region="south">South Florida</button>
+                <button class="filter-btn region-btn" data-region="central">Central Florida</button>
+                <button class="filter-btn region-btn" data-region="north">North Florida</button>
+            </div>
+            <div class="filter-group">
+                <label class="filter-label">Type:</label>
+                <button class="filter-btn type-btn active" data-filter="all">All Types</button>
+                <button class="filter-btn type-btn" data-filter="bouldering">Bouldering</button>
+                <button class="filter-btn type-btn" data-filter="rope">Rope Climbing</button>
+                <button class="filter-btn type-btn" data-filter="lead">Lead Climbing</button>
+            </div>
+        </nav>
+
+        <main>
+            <h2>CLIMBING GYMS (FLORIDA)</h2>
+            <div class="gym-grid" id="gymGrid">
+                <!-- Gym cards will be populated by JavaScript -->
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
