@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #ffffff;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #b0b0b0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.filter-nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.filter-label {
+    font-size: 0.9rem;
+    color: #b0b0b0;
+    font-weight: 500;
+    margin-right: 0.5rem;
+}
+
+.filter-btn {
+    padding: 0.8rem 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: #ff4757;
+    border-color: #ff4757;
+    transform: translateY(-2px);
+}
+
+main h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+.gym-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.gym-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.gym-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.gym-header {
+    margin-bottom: 1rem;
+}
+
+.gym-name {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+.gym-location {
+    color: #ff4757;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.gym-location::before {
+    content: "📍";
+}
+
+.gym-details {
+    margin-bottom: 1.5rem;
+}
+
+.gym-address {
+    color: #b0b0b0;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.gym-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.phone::before {
+    content: "📞";
+}
+
+.website::before {
+    content: "🌐";
+}
+
+.instagram::before {
+    content: "📸";
+}
+
+.amenities {
+    margin-bottom: 1rem;
+}
+
+.amenities-title {
+    font-size: 0.9rem;
+    color: #b0b0b0;
+    margin-bottom: 0.5rem;
+}
+
+.amenities-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.amenity-tag {
+    background: rgba(78, 205, 196, 0.2);
+    color: #4ecdc4;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(78, 205, 196, 0.3);
+}
+
+.gym-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.action-btn {
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.website-btn {
+    background: #ff4757;
+    color: white;
+    flex: 1;
+}
+
+.website-btn:hover {
+    background: #ff3742;
+    transform: translateY(-1px);
+}
+
+.instagram-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.instagram-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.action-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .gym-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .filter-nav {
+        gap: 1rem;
+        flex-direction: column;
+    }
+    
+    .filter-group {
+        justify-content: center;
+    }
+    
+    .filter-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+}
