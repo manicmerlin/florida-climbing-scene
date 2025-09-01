@@ -20,7 +20,7 @@ body {
 
 header {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 header h1 {
@@ -269,6 +269,7 @@ main h2 {
     .filter-nav {
         gap: 1rem;
         flex-direction: column;
+        margin-bottom: 1rem;
     }
     
     .filter-group {
