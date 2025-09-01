@@ -59,32 +59,18 @@
 
         <nav class="filter-nav">
             <div class="filter-group">
-                <div class="dropdown">
-                    <button class="dropdown-btn" id="regionDropdown">
-                        <span class="dropdown-label">Region:</span>
-                        <span class="dropdown-value">All Florida</span>
-                        <span class="dropdown-arrow">▼</span>
-                    </button>
-                    <div class="dropdown-content" id="regionDropdownContent">
-                        <button class="dropdown-item active" data-region="all">All Florida</button>
-                        <button class="dropdown-item" data-region="south">South Florida</button>
-                        <button class="dropdown-item" data-region="central">Central Florida</button>
-                        <button class="dropdown-item" data-region="north">North Florida</button>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <button class="dropdown-btn" id="typeDropdown">
-                        <span class="dropdown-label">Type:</span>
-                        <span class="dropdown-value">All Types</span>
-                        <span class="dropdown-arrow">▼</span>
-                    </button>
-                    <div class="dropdown-content" id="typeDropdownContent">
-                        <button class="dropdown-item active" data-filter="all">All Types</button>
-                        <button class="dropdown-item" data-filter="bouldering">Bouldering</button>
-                        <button class="dropdown-item" data-filter="rope">Rope Climbing</button>
-                        <button class="dropdown-item" data-filter="lead">Lead Climbing</button>
-                    </div>
-                </div>
+                <label class="filter-label">Region:</label>
+                <button class="filter-btn region-btn active" data-region="all">All Florida</button>
+                <button class="filter-btn region-btn" data-region="south">South Florida</button>
+                <button class="filter-btn region-btn" data-region="central">Central Florida</button>
+                <button class="filter-btn region-btn" data-region="north">North Florida</button>
+            </div>
+            <div class="filter-group">
+                <label class="filter-label">Type:</label>
+                <button class="filter-btn type-btn active" data-filter="all">All Types</button>
+                <button class="filter-btn type-btn" data-filter="bouldering">Bouldering</button>
+                <button class="filter-btn type-btn" data-filter="rope">Rope Climbing</button>
+                <button class="filter-btn type-btn" data-filter="lead">Lead Climbing</button>
             </div>
         </nav>
 
