@@ -431,12 +431,18 @@ const climbingGyms = [
   }
 ];
 
-// DOM Elements
+// Get DOM elements
+const regionBtns = document.querySelectorAll('.region-btn, [data-region]');
+const typeBtns = document.querySelectorAll('.type-btn, [data-filter]');
 const gymGrid = document.getElementById('gymGrid');
-const regionBtns = document.querySelectorAll('.region-btn');
-const typeBtns = document.querySelectorAll('.type-btn');
 
-// Current filter state
+// Dropdown elements
+const regionDropdown = document.getElementById('regionDropdown');
+const typeDropdown = document.getElementById('typeDropdown');
+const regionDropdownContent = document.getElementById('regionDropdownContent');
+const typeDropdownContent = document.getElementById('typeDropdownContent');
+
+// Current filter states
 let currentRegion = 'all';
 let currentType = 'all';
 
@@ -518,11 +524,105 @@ function filterGyms() {
     renderGyms(filteredGyms);
 }
 
-// Event listeners
+// Dropdown functionality
+function toggleDropdown(dropdown) {
+    // Close other dropdowns
+    document.querySelectorAll('.dropdown').forEach(d => {
+        if (d !== dropdown) {
+            d.classList.remove('open');
+        }
+    });
+    
+    // Toggle current dropdown
+    dropdown.classList.toggle('open');
+}
+
+function closeAllDropdowns() {
+    document.querySelectorAll('.dropdown').forEach(d => {
+        d.classList.remove('open');
+    });
+}
+
+function updateDropdownText(dropdown, text) {
+    const valueSpan = dropdown.querySelector('.dropdown-value');
+    valueSpan.textContent = text;
+}
+
+// Event listeners for dropdowns
+if (regionDropdown) {
+    regionDropdown.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleDropdown(regionDropdown.parentElement);
+    });
+}
+
+if (typeDropdown) {
+    typeDropdown.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleDropdown(typeDropdown.parentElement);
+    });
+}
+
+// Region dropdown items
+if (regionDropdownContent) {
+    regionDropdownContent.addEventListener('click', (e) => {
+        if (e.target.classList.contains('dropdown-item')) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Update active state
+            regionDropdownContent.querySelectorAll('.dropdown-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            e.target.classList.add('active');
+            
+            // Update dropdown text and filter
+            updateDropdownText(regionDropdown.parentElement, e.target.textContent);
+            currentRegion = e.target.getAttribute('data-region');
+            closeAllDropdowns();
+            filterGyms();
+        }
+    });
+}
+
+// Type dropdown items
+if (typeDropdownContent) {
+    typeDropdownContent.addEventListener('click', (e) => {
+        if (e.target.classList.contains('dropdown-item')) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Update active state
+            typeDropdownContent.querySelectorAll('.dropdown-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            e.target.classList.add('active');
+            
+            // Update dropdown text and filter
+            updateDropdownText(typeDropdown.parentElement, e.target.textContent);
+            currentType = e.target.getAttribute('data-filter');
+            closeAllDropdowns();
+            filterGyms();
+        }
+    });
+}
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', closeAllDropdowns);
+
+// Legacy button support (for desktop if kept)
 regionBtns.forEach(btn => {
+    if (btn.classList.contains('dropdown-item')) return; // Skip dropdown items
+    
     btn.addEventListener('click', () => {
         // Update active state
-        regionBtns.forEach(b => b.classList.remove('active'));
+        regionBtns.forEach(b => {
+            if (!b.classList.contains('dropdown-item')) {
+                b.classList.remove('active');
+            }
+        });
         btn.classList.add('active');
         
         // Update current region and filter
@@ -532,9 +632,15 @@ regionBtns.forEach(btn => {
 });
 
 typeBtns.forEach(btn => {
+    if (btn.classList.contains('dropdown-item')) return; // Skip dropdown items
+    
     btn.addEventListener('click', () => {
         // Update active state
-        typeBtns.forEach(b => b.classList.remove('active'));
+        typeBtns.forEach(b => {
+            if (!b.classList.contains('dropdown-item')) {
+                b.classList.remove('active');
+            }
+        });
         btn.classList.add('active');
         
         // Update current type and filter
