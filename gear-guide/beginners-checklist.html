@@ -21,10 +21,22 @@
     <div class="container">
         <nav class="main-nav">
             <div class="nav-content">
-                <h1><a href="../index.html">FLORIDA CLIMBING DIRECTORY</a></h1>
-                <div class="nav-tabs">
-                    <a href="../index.html" class="nav-tab">Gyms</a>
-                    <a href="../index.html#gear-guide" class="nav-tab active">Climbing Gear Guide</a>
+                <h1><a href="../index.html" class="nav-logo">FLORIDA CLIMBING DIRECTORY</a></h1>
+                <div class="nav-menu">
+                    <button class="menu-toggle" id="menuToggle">
+                        <span class="menu-icon">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                        <span class="menu-text">Menu</span>
+                    </button>
+                    <div class="menu-dropdown" id="menuDropdown">
+                        <a href="../index.html" class="menu-item">🏢 Gym Directory</a>
+                        <a href="../gear-guide.html" class="menu-item active">🧗‍♂️ Gear Guide</a>
+                        <a href="#" class="menu-item disabled">🗺️ Routes (Coming Soon)</a>
+                        <a href="#" class="menu-item disabled">📅 Events (Coming Soon)</a>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -143,11 +155,31 @@
             </div>
 
             <div class="blog-navigation">
-                <a href="../index.html#gear-guide" class="back-link">← Back to Gear Guide</a>
+                <a href="../gear-guide.html" class="back-link">← Back to Gear Guide</a>
             </div>
         </article>
     </div>
 
-    <script src="../script.js"></script>
+    <script>
+        // Menu toggle functionality
+        const menuToggle = document.getElementById('menuToggle');
+        const menuDropdown = document.getElementById('menuDropdown');
+
+        if (menuToggle && menuDropdown) {
+            menuToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                menuDropdown.classList.toggle('active');
+                menuToggle.classList.toggle('active');
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!menuToggle.contains(e.target) && !menuDropdown.contains(e.target)) {
+                    menuDropdown.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                }
+            });
+        }
+    </script>
 </body>
 </html>

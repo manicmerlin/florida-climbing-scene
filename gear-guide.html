@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climbing Gear Guide | Florida Climbing Directory</title>
+    <meta name="description" content="Essential climbing gear guides for Florida climbers. Learn about shoes, harnesses, belay devices, and more with expert advice tailored for Florida's unique climbing scene.">
+    <meta name="keywords" content="climbing gear guide, Florida climbing, climbing equipment, beginner climbing gear, climbing shoes, harnesses, belay devices">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://floridaclimbingscene.com/gear-guide">
+    <meta property="og:title" content="Climbing Gear Guide | Florida Climbing Directory">
+    <meta property="og:description" content="Essential climbing gear guides for Florida climbers with expert advice and recommendations.">
+    
+    <link rel="canonical" href="https://floridaclimbingscene.com/gear-guide">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="blog-styles.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="main-nav">
+            <div class="nav-content">
+                <h1><a href="index.html" class="nav-logo">FLORIDA CLIMBING DIRECTORY</a></h1>
+                <div class="nav-menu">
+                    <button class="menu-toggle" id="menuToggle">
+                        <span class="menu-icon">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                        <span class="menu-text">Menu</span>
+                    </button>
+                    <div class="menu-dropdown" id="menuDropdown">
+                        <a href="index.html" class="menu-item">🏢 Gym Directory</a>
+                        <a href="gear-guide.html" class="menu-item active">🧗‍♂️ Gear Guide</a>
+                        <a href="#" class="menu-item disabled">🗺️ Routes (Coming Soon)</a>
+                        <a href="#" class="menu-item disabled">📅 Events (Coming Soon)</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <main>
+            <div class="gear-guide-header">
+                <h2>CLIMBING GEAR GUIDE</h2>
+                <p style="text-align: center; color: #b0b0b0; margin-bottom: 3rem;">Essential gear advice for Florida climbers, from gym beginners to outdoor enthusiasts. Get expert recommendations tailored for our unique climate and climbing scene.</p>
+            </div>
+            
+            <div class="blog-grid">
+                <article class="blog-card" onclick="openBlogPost('beginners-checklist')">
+                    <div class="blog-image">
+                        <div class="blog-image-placeholder">🧗‍♂️</div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>The Beginner's Climbing Gear Checklist: What You Actually Need to Start</h3>
+                        <p class="blog-excerpt">Walking into a Florida climbing gym for the first time? Here's the real deal on the climbing gear you actually need to start your journey - no marketing fluff, just honest advice from someone who's been there.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">September 7, 2025</span>
+                            <span class="blog-read-time">8 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Placeholder for future posts -->
+                <article class="blog-card coming-soon">
+                    <div class="blog-image">
+                        <div class="blog-image-placeholder">👟</div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Choosing the Perfect Climbing Shoes for Florida's Climate</h3>
+                        <p class="blog-excerpt">Coming soon: A deep dive into finding the right climbing shoes for hot, humid conditions and the unique demands of Florida climbing.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">Coming Soon</span>
+                            <span class="blog-read-time">6 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card coming-soon">
+                    <div class="blog-image">
+                        <div class="blog-image-placeholder">🎒</div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Building Your Outdoor Climbing Kit: From Gym to Crag</h3>
+                        <p class="blog-excerpt">Coming soon: Everything you need to know about transitioning from indoor climbing to outdoor adventures, with gear recommendations for Florida's limited outdoor options.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">Coming Soon</span>
+                            <span class="blog-read-time">10 min read</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Menu toggle functionality
+        const menuToggle = document.getElementById('menuToggle');
+        const menuDropdown = document.getElementById('menuDropdown');
+
+        menuToggle.addEventListener('click', () => {
+            menuDropdown.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!menuToggle.contains(e.target) && !menuDropdown.contains(e.target)) {
+                menuDropdown.classList.remove('active');
+                menuToggle.classList.remove('active');
+            }
+        });
+
+        // Function to open blog posts
+        function openBlogPost(postId) {
+            window.location.href = `gear-guide/${postId}.html`;
+        }
+    </script>
+</body>
+</html>

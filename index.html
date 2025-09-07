@@ -56,9 +56,21 @@
         <nav class="main-nav">
             <div class="nav-content">
                 <h1>FLORIDA CLIMBING DIRECTORY</h1>
-                <div class="nav-tabs">
-                    <button class="nav-tab active" data-tab="gyms">Gyms</button>
-                    <button class="nav-tab" data-tab="gear-guide">Climbing Gear Guide</button>
+                <div class="nav-menu">
+                    <button class="menu-toggle" id="menuToggle">
+                        <span class="menu-icon">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                        <span class="menu-text">Menu</span>
+                    </button>
+                    <div class="menu-dropdown" id="menuDropdown">
+                        <a href="index.html" class="menu-item active">🏢 Gym Directory</a>
+                        <a href="gear-guide.html" class="menu-item">🧗‍♂️ Gear Guide</a>
+                        <a href="#" class="menu-item disabled">🗺️ Routes (Coming Soon)</a>
+                        <a href="#" class="menu-item disabled">📅 Events (Coming Soon)</a>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -81,37 +93,10 @@
         </nav>
 
         <main>
-            <!-- Gyms Section -->
-            <div id="gyms-section" class="content-section active">
-                <h2>CLIMBING GYMS IN FLORIDA</h2>
-                <p style="text-align: center; color: #b0b0b0; margin-bottom: 2rem;">Browse climbing facilities across South Florida, Central Florida, and North Florida. Filter by region and climbing type to find the perfect gym for your adventure.</p>
-                <div class="gym-grid" id="gymGrid">
-                    <!-- Gym cards will be populated by JavaScript -->
-                </div>
-            </div>
-
-            <!-- Gear Guide Section -->
-            <div id="gear-guide-section" class="content-section">
-                <div class="gear-guide-header">
-                    <h2>CLIMBING GEAR GUIDE</h2>
-                    <p style="text-align: center; color: #b0b0b0; margin-bottom: 3rem;">Essential gear advice for Florida climbers, from gym beginners to outdoor enthusiasts.</p>
-                </div>
-                
-                <div class="blog-grid">
-                    <article class="blog-card" onclick="openBlogPost('beginners-checklist')">
-                        <div class="blog-image">
-                            <div class="blog-image-placeholder">🧗‍♂️</div>
-                        </div>
-                        <div class="blog-content">
-                            <h3>The Beginner's Climbing Gear Checklist: What You Actually Need to Start</h3>
-                            <p class="blog-excerpt">Walking into a Florida climbing gym for the first time? Here's the real deal on the climbing gear you actually need to start your journey - no marketing fluff, just honest advice from someone who's been there.</p>
-                            <div class="blog-meta">
-                                <span class="blog-date">September 7, 2025</span>
-                                <span class="blog-read-time">8 min read</span>
-                            </div>
-                        </div>
-                    </article>
-                </div>
+            <h2>CLIMBING GYMS IN FLORIDA</h2>
+            <p style="text-align: center; color: #b0b0b0; margin-bottom: 2rem;">Browse climbing facilities across South Florida, Central Florida, and North Florida. Filter by region and climbing type to find the perfect gym for your adventure.</p>
+            <div class="gym-grid" id="gymGrid">
+                <!-- Gym cards will be populated by JavaScript -->
             </div>
         </main>
     </div>

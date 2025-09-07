@@ -543,54 +543,27 @@ typeBtns.forEach(btn => {
     });
 });
 
-// Tab navigation functionality
-const navTabs = document.querySelectorAll('.nav-tab');
-const contentSections = document.querySelectorAll('.content-section');
+// Menu toggle functionality
+const menuToggle = document.getElementById('menuToggle');
+const menuDropdown = document.getElementById('menuDropdown');
 
-navTabs.forEach(tab => {
-    tab.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetTab = tab.getAttribute('data-tab');
-        
-        // Update active tab
-        navTabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        
-        // Show/hide content sections
-        contentSections.forEach(section => {
-            section.classList.remove('active');
-        });
-        
-        const targetSection = document.getElementById(targetTab + '-section');
-        if (targetSection) {
-            targetSection.classList.add('active');
-        }
-        
-        // Hide/show filter nav based on active tab
-        const filterNav = document.querySelector('.filter-nav');
-        if (targetTab === 'gyms') {
-            filterNav.style.display = 'flex';
-        } else {
-            filterNav.style.display = 'none';
+if (menuToggle && menuDropdown) {
+    menuToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        menuDropdown.classList.toggle('active');
+        menuToggle.classList.toggle('active');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!menuToggle.contains(e.target) && !menuDropdown.contains(e.target)) {
+            menuDropdown.classList.remove('active');
+            menuToggle.classList.remove('active');
         }
     });
-});
-
-// Function to open blog posts
-function openBlogPost(postId) {
-    window.location.href = `gear-guide/${postId}.html`;
 }
 
 // Initialize the page
 document.addEventListener('DOMContentLoaded', () => {
     renderGyms();
-    
-    // Check for hash navigation
-    const hash = window.location.hash;
-    if (hash === '#gear-guide') {
-        const gearTab = document.querySelector('[data-tab="gear-guide"]');
-        if (gearTab) {
-            gearTab.click();
-        }
-    }
 });
