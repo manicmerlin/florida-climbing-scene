@@ -62,31 +62,32 @@
                     </div>
                 </article>
 
-                <!-- Placeholder for future posts -->
-                <article class="blog-card coming-soon">
+                <!-- Second blog post - Climbing Shoes -->
+                <article class="blog-card" onclick="openBlogPost('climbing-shoes-guide')">
                     <div class="blog-image">
                         <div class="blog-image-placeholder">👟</div>
                     </div>
                     <div class="blog-content">
-                        <h3>Choosing the Perfect Climbing Shoes for Florida's Climate</h3>
-                        <p class="blog-excerpt">Coming soon: A deep dive into finding the right climbing shoes for hot, humid conditions and the unique demands of Florida climbing.</p>
+                        <h3>How to Choose the Right Climbing Shoes (Without Wasting Money)</h3>
+                        <p class="blog-excerpt">Don't make the same $180 mistake I did. Learn how to find climbing shoes that fit your foot, your budget, and your climbing style. From neutral to aggressive, fit tips to Florida-specific advice.</p>
                         <div class="blog-meta">
-                            <span class="blog-date">Coming Soon</span>
-                            <span class="blog-read-time">6 min read</span>
+                            <span class="blog-date">September 7, 2025</span>
+                            <span class="blog-read-time">10 min read</span>
                         </div>
                     </div>
                 </article>
 
-                <article class="blog-card coming-soon">
+                <!-- Third blog post - Harness Guide -->
+                <article class="blog-card" onclick="openBlogPost('harness-guide')">
                     <div class="blog-image">
-                        <div class="blog-image-placeholder">🎒</div>
+                        <div class="blog-image-placeholder">🔗</div>
                     </div>
                     <div class="blog-content">
-                        <h3>Building Your Outdoor Climbing Kit: From Gym to Crag</h3>
-                        <p class="blog-excerpt">Coming soon: Everything you need to know about transitioning from indoor climbing to outdoor adventures, with gear recommendations for Florida's limited outdoor options.</p>
+                        <h3>Harness 101: Finding the Perfect Fit for Comfort and Safety</h3>
+                        <p class="blog-excerpt">From waistbelt sizing to Florida-specific comfort hacks - learn how to choose and fit a climbing harness that keeps you safe and comfortable on the wall.</p>
                         <div class="blog-meta">
-                            <span class="blog-date">Coming Soon</span>
-                            <span class="blog-read-time">10 min read</span>
+                            <span class="blog-date">September 7, 2025</span>
+                            <span class="blog-read-time">12 min read</span>
                         </div>
                     </div>
                 </article>
@@ -114,7 +115,9 @@
 
         // Function to open blog posts
         function openBlogPost(postId) {
-            window.location.href = `gear-guide/${postId}.html`;
+            if (postId === 'beginners-checklist' || postId === 'climbing-shoes-guide' || postId === 'harness-guide') {
+                window.location.href = `gear-guide/${postId}.html`;
+            }
         }
     </script>
 </body>
