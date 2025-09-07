@@ -12,6 +12,9 @@ body {
     line-height: 1.6;
 }
 
+/* Import blog styles */
+@import url('blog-styles.css');
+
 .container {
     max-width: 1400px;
     margin: 0 auto;
