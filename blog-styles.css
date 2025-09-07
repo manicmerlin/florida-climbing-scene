@@ -459,3 +459,108 @@
         font-size: 1.2rem;
     }
 }
+
+/* Audio Player Styles */
+.blog-title-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.blog-title-row h1 {
+    flex: 1;
+    margin: 0;
+}
+
+.audio-controls {
+    display: flex;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+.audio-play-btn, .premium-audio-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    padding: 0.7rem 1.2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    min-width: 100px;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.audio-play-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+    background: linear-gradient(135deg, #5a67d8, #6b46c1);
+}
+
+.audio-play-btn:active {
+    transform: translateY(-1px);
+}
+
+.audio-play-btn.playing {
+    background: linear-gradient(135deg, #ff4757, #ff3742);
+    box-shadow: 0 4px 15px rgba(255, 71, 87, 0.3);
+}
+
+.audio-play-btn.playing:hover {
+    box-shadow: 0 6px 20px rgba(255, 71, 87, 0.4);
+    background: linear-gradient(135deg, #ff3742, #ff2d42);
+}
+
+.premium-audio-btn {
+    background: linear-gradient(135deg, #f093fb, #f5576c);
+    min-width: 90px;
+}
+
+.premium-audio-btn:hover {
+    background: linear-gradient(135deg, #e084fc, #f04569);
+    box-shadow: 0 6px 20px rgba(240, 147, 251, 0.4);
+}
+
+.audio-play-btn svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.audio-status {
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Mobile responsiveness for audio button */
+@media (max-width: 768px) {
+    .blog-title-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.8rem;
+    }
+    
+    .audio-play-btn {
+        align-self: flex-start;
+        min-width: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .blog-title-row h1 {
+        font-size: 1.8rem;
+        line-height: 1.2;
+    }
+    
+    .audio-play-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+    }
+}
