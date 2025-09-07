@@ -120,6 +120,51 @@
                         </div>
                     </div>
                 </article>
+
+                <!-- Fourth blog post - Belay Devices -->
+                <article class="blog-card" onclick="openBlogPost('belay-devices-guide')">
+                    <div class="blog-image">
+                        <div class="blog-image-placeholder">🔒</div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Belay Devices Explained: Tube vs. Assisted-Braking</h3>
+                        <p class="blog-excerpt">Compare ATC vs GriGri and learn which belay device is best for you. From safety features to gym requirements - make an informed choice for Florida climbing.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">September 7, 2025</span>
+                            <span class="blog-read-time">15 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Fifth blog post - Chalk Guide -->
+                <article class="blog-card" onclick="openBlogPost('chalk-guide-florida')">
+                    <div class="blog-image">
+                        <div class="blog-image-placeholder">🧂</div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Chalk Guide for Florida: Liquid vs. Loose for Humid Conditions</h3>
+                        <p class="blog-excerpt">Master the art of staying grippy in Florida's humidity. Learn when to use liquid chalk, how to prevent paste, and discover the best chalk strategies for sweaty conditions.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">September 7, 2025</span>
+                            <span class="blog-read-time">12 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Sixth blog post - Crash Pads -->
+                <article class="blog-card" onclick="openBlogPost('crash-pads-guide')">
+                    <div class="blog-image">
+                        <div class="blog-image-placeholder">🛡️</div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Crash Pads: How to Pick the Right Pad for Bouldering Trips</h3>
+                        <p class="blog-excerpt">Planning bouldering adventures beyond Florida? Learn about pad sizes, hinge vs taco fold, foam quality, and get expert recommendations for safe outdoor climbing.</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">September 7, 2025</span>
+                            <span class="blog-read-time">14 min read</span>
+                        </div>
+                    </div>
+                </article>
             </div>
         </main>
     </div>
@@ -144,7 +189,16 @@
 
         // Function to open blog posts
         function openBlogPost(postId) {
-            if (postId === 'beginners-checklist' || postId === 'climbing-shoes-guide' || postId === 'harness-guide') {
+            const validPosts = [
+                'beginners-checklist', 
+                'climbing-shoes-guide', 
+                'harness-guide', 
+                'belay-devices-guide', 
+                'chalk-guide-florida', 
+                'crash-pads-guide'
+            ];
+            
+            if (validPosts.includes(postId)) {
                 window.location.href = `gear-guide/${postId}.html`;
             }
         }
