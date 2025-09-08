@@ -395,16 +395,25 @@
             }
             
             extractTextContent() {
-                const article = document.querySelector('.blog-post');
-                const title = document.querySelector('h1').textContent;
-                const content = article.textContent
-                    .replace(/Back to Gear Guide/g, '')
-                    .replace(/Play/g, '')
-                    .replace(/Pause/g, '')
+                const blogContent = document.querySelector('.blog-content');
+                if (!blogContent) {
+                    // Fallback to the full article if blog-content isn't found
+                    const article = document.querySelector('.blog-post');
+                    const content = article.textContent
+                        .replace(/Back to Gear Guide/g, '')
+                        .replace(/Play/g, '')
+                        .replace(/Pause/g, '')
+                        .replace(/\s+/g, ' ')
+                        .trim();
+                    return content;
+                }
+                
+                // Extract only the main article content (skip title and meta)
+                const content = blogContent.textContent
                     .replace(/\s+/g, ' ')
                     .trim();
                 
-                return `${title}. ${content}`;
+                return content;
             }
         }
     </script>
